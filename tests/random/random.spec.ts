@@ -29,23 +29,23 @@ describe("Random.randint()", () => {
 });
 
 describe("Random.shuffle()", () => {
-    it("shuffle (1)", () => {
-        const R = new Random(new BuiltinSource());
-        const xs: number[] = [];
-        for (let i = 0; i < 100; ++i) {
-            xs.push(i);
-        }
-        R.shuffle(xs);
-        let gt = 0;
-        let lt = 0;
-        for (let i = 1; i < 100; ++i) {
-            if (xs[i-1] < xs[i]) {
-                lt += 1;
-            } else {
-                gt += 1;
-            }
-        }
-        expect(40 <= lt && lt <= 60).to.be.true;
-        expect(40 <= gt && gt <= 60).to.be.true;
-    });
+  it("shuffle (1)", () => {
+    const R = new Random(new BuiltinSource());
+    const xs: number[] = [];
+    for (let i = 0; i < 100; ++i) {
+      xs.push(i);
+    }
+    R.shuffle(xs);
+    let gt = 0;
+    let lt = 0;
+    for (let i = 1; i < 100; ++i) {
+      if (xs[i - 1] < xs[i]) {
+        lt += 1;
+      } else {
+        gt += 1;
+      }
+    }
+    expect(40 <= lt && lt <= 60).to.be.true;
+    expect(40 <= gt && gt <= 60).to.be.true;
+  });
 });
