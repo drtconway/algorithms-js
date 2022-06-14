@@ -1,5 +1,5 @@
 {
-  "name": "kmer-js",
+  "name": "algorithms-js",
   "version": "1.0.0",
   "description": "disjoint set data structure",
   "main": "dist/index.js",
