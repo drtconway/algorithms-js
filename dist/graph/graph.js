@@ -12,7 +12,7 @@ class Graph {
         for (const v of this.vertices) {
             const k = this.keyMaker(v);
             if (k in this.vertexIndex) {
-                throw new Error(`duplicate vertex: ${v} (${String(k)}).`);
+                throw new Error(`duplicate vertex: '${v}' (${String(k)}).`);
             }
             this.vertexIndex[k] = v;
             this.V.push(k);
