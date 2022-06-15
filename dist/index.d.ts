@@ -18,8 +18,6 @@ export declare const random: {
 };
 import * as uf from "./set/unionfind";
 export declare const set: {
-    NumberKey(x: number): string | number;
-    StringKey(x: string): string | number;
     UnionFind: typeof uf.UnionFind;
     union<T>(...ss: Set<T>[]): Set<T>;
     intersection<T_1>(...ss: Set<T_1>[]): Set<T_1>;

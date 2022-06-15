@@ -1,18 +1,12 @@
-export function NumberKey(x: number): string | number {
-  return x;
-}
-
-export function StringKey(x: string): string | number {
-  return x;
-}
+import {Key, makeKey } from "../util/key";
 
 export class UnionFind<T> {
-  private makeKey: (x: T) => string | number;
-  private parent: { [key: string | number]: T };
-  private rank: { [key: string | number]: number };
+  private makeKey: (x: T) => Key;
+  private parent: { [key: Key]: T };
+  private rank: { [key: Key]: number };
 
-  constructor(makeKey: (x: T) => string | number) {
-    this.makeKey = makeKey;
+  constructor(f: (x: T) => Key = makeKey) {
+    this.makeKey = f;
     this.parent = {};
     this.rank = {};
   }

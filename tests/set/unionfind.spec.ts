@@ -1,4 +1,5 @@
-import { NumberKey, StringKey, UnionFind } from "../../src/set/unionfind";
+import { UnionFind } from "../../src/set/unionfind";
+import { Key } from "../../src/util/key";
 
 import * as mocha from "mocha";
 import * as chai from "chai";
@@ -7,14 +8,14 @@ const expect = chai.expect;
 
 describe("Basic union find tests", () => {
   it("simple test", () => {
-    const uf = new UnionFind(StringKey);
+    const uf = new UnionFind<string>();
     expect(uf.find("a")).to.eql("a");
     expect(uf.find("b")).to.eql("b");
     uf.union("a", "b");
     expect(uf.find("a") == uf.find("b")).to.be.true;
   });
   it("transitive test", () => {
-    const uf = new UnionFind(StringKey);
+    const uf = new UnionFind<string>();
     expect(uf.find("a")).to.eql("a");
     expect(uf.find("b")).to.eql("b");
     expect(uf.find("c")).to.eql("c");
@@ -49,7 +50,7 @@ describe("Basic union find tests", () => {
       96, 36, 61, 109, 123, 67, 195, 165, 127, 25, 9, 152, 106, 28, 57, 16, 63, 130, 10, 103, 0, 49, 114, 80, 150, 181, 81, 79, 86,
       171, 116, 23,
     ];
-    const uf = new UnionFind(NumberKey);
+    const uf = new UnionFind<number>();
     for (let i = 0; i < N; ++i) {
       uf.union(xs[i], ys[i]);
     }

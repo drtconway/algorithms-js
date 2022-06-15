@@ -1,10 +1,9 @@
-export declare function NumberKey(x: number): string | number;
-export declare function StringKey(x: string): string | number;
+import { Key } from "../util/key";
 export declare class UnionFind<T> {
     private makeKey;
     private parent;
     private rank;
-    constructor(makeKey: (x: T) => string | number);
+    constructor(f?: (x: T) => Key);
     find(x: T): T;
     union(x: T, y: T): T;
 }

@@ -1,17 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnionFind = exports.StringKey = exports.NumberKey = void 0;
-function NumberKey(x) {
-    return x;
-}
-exports.NumberKey = NumberKey;
-function StringKey(x) {
-    return x;
-}
-exports.StringKey = StringKey;
+exports.UnionFind = void 0;
+const key_1 = require("../util/key");
 class UnionFind {
-    constructor(makeKey) {
-        this.makeKey = makeKey;
+    constructor(f = key_1.makeKey) {
+        this.makeKey = f;
         this.parent = {};
         this.rank = {};
     }
