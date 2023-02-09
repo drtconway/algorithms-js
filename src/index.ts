@@ -6,8 +6,9 @@ import * as tsort from "./graph/tsort-tarjan";
 export const graph = { ...gph, ...tarjan, ...tsort, ...rndGph };
 
 import * as range from "./list/range";
+import * as heap from "./list/heap";
 
-export const list = { ...range };
+export const list = { ...range, ...heap };
 
 import * as rnd from "./random/random";
 import * as bs from "./random/builtin";

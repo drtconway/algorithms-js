@@ -5,7 +5,12 @@ export declare const graph: {
     tarjan<T_2>(G: gph.Graph<T_2>, sort?: boolean): T_2[][];
     Graph: typeof gph.Graph;
 };
+import * as heap from "./list/heap";
 export declare const list: {
+    defaultCompare(lhs: any, rhs: any): number;
+    numericCompare(lhs: number, rhs: number): number;
+    reverseNumericCompare(lhs: number, rhs: number): number;
+    Heap: typeof heap.Heap;
     range(fst: number, snd?: number, trd?: number): Generator<number, any, unknown>;
 };
 import * as rnd from "./random/random";
